@@ -1,7 +1,7 @@
 # Based on http://stackoverflow.com/a/5809952/689985
 
 from django.test.simple import DjangoTestSuiteRunner
-from django.test.simple import dependency_ordered
+from django.test.runner import dependency_ordered
 
 class ByPassableDBDjangoTestSuiteRunner(DjangoTestSuiteRunner):
     def setup_databases(self, **kwargs):
