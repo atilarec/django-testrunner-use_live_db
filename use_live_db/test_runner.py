@@ -14,7 +14,7 @@ class ByPassableDBDjangoTestSuiteRunner(DjangoTestSuiteRunner):
         dependencies = {}
         for alias in connections:
             connection = connections[alias]
-            if connection.settings_dict['TEST_MIRROR']:
+            if connection.settings_dict.get('TEST_MIRROR', None):
                 # If the database is marked as a test mirror, save
                 # the alias.
                 mirrored_aliases[alias] = connection.settings_dict['TEST_MIRROR']
